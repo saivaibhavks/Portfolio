@@ -68,24 +68,16 @@ const education = {
   title: "My Education",
   items: [
     {
-      instituion: "abcccc",
-      degree: "uhiuhiu",
-      duration: "ugiugiugiu",
+      instituion: "NMIT, Bangalore",
+      degree: "B.TECH",
+      duration: "2018 - 2022",
+      grade: "9.47 CGPA",
     },
     {
-      instituion: "abcccc",
-      degree: "uhiuhiu",
-      duration: "ugiugiugiu",
-    },
-    {
-      instituion: "abcccc",
-      degree: "uhiuhiu",
-      duration: "ugiugiugiu",
-    },
-    {
-      instituion: "abcccc",
-      degree: "uhiuhiu",
-      duration: "ugiugiugiu",
+      instituion: "S.R DAV Public School",
+      degree: "CLASS XII",
+      duration: "2017-18",
+      grade: "84 Percent",
     },
   ],
 };
@@ -213,16 +205,26 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[150px] py-4 px-8 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] h-[300px] py-4 px-8 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-lg max-w-[220px] min-h-[50px] text-center lg:text-left">
-                            {item.degree}
-                          </h3>
-                          <div className="flex items-center gap-2">
-                            <span className="w-[4px] h-[4px] rounded-full bg-accent"></span>
+                          <div className="text-2xl flex items-center gap-2 w-[400px]">
                             <p className="text-white/60">{item.instituion}</p>
                           </div>
+                          <h3 className="text-lg w-[700px]  text-center lg:text-left">
+                            {item.degree}
+                          </h3>
+                          {item.instituion.includes("NMIT") && (
+                            <h3 className="text-lg w-[700px] text-center lg:text-left">
+                              Information Science
+                            </h3>
+                          )}
+                          {item.instituion.includes("DAV") && (
+                            <h3 className="text-lg w-[700px] text-center lg:text-left">
+                              PCM CS
+                            </h3>
+                          )}
+                          <span className="text-accent">{item.duration}</span>
+                          <div className="text-accent">{item.grade}</div>
                         </li>
                       );
                     })}
