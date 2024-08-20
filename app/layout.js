@@ -5,8 +5,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
-import Cursor from "@/components/Cursor/Cursor";
-import ParticlesComponent from "@/components/ParticlesComponent";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -23,7 +21,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={jetbrainsMono.variable}>
-        <Cursor />
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
